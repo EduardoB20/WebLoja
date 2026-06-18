@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área dev - Web Loja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Web<span>Loja</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="produtos.html">Sites</a></li>
+                <li><a href="contato.html" style="color: var(--accent); font-weight: 600;">Área dev</a></li>
+                <li id="menu-login"><a href="cadastro.html">Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEÇÃO DO TOPO: Enviar Mensagem/Pedido para um Dev -->
+        <section style="margin-bottom: 4rem;">
+            <div class="form-container" style="max-width: 650px;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.6rem;">Enviar Mensagem ou Novo Pedido</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Preencha o formulário abaixo para enviar suas especificações diretamente para nossa equipe de desenvolvedores.</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Seu pedido foi enviado! Nossa equipe de devs analisará as especificações em breve.'); this.reset();">
+                    <div class="form-group">
+                        <label>Título do Projeto / Assunto</label>
+                        <input type="text" required placeholder="Ex: E-commerce de sapatos, Landing Page médica...">
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label>Orçamento Estimado</label>
+                            <select required>
+                                <option>Até R$ 1.000,00</option>
+                                <option>R$ 1.000,00 a R$ 3.000,00</option>
+                                <option>R$ 3.000,00 a R$ 6.000,00</option>
+                                <option>Acima de R$ 6.000,00</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="flex: 1; min-width: 200px;">
+                            <label>Prazo Esperado</label>
+                            <select required>
+                                <option>Urgente (Até 1 semana)</option>
+                                <option>Médio (2 a 4 semanas)</option>
+                                <option>Flexível</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descrição Detalhada do Site</label>
+                        <textarea rows="5" required placeholder="Descreva os recursos que o seu site precisa ter (ex: integração com meios de pagamento, formulários, banco de dados...)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem;">Enviar para Análise dos Devs</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE BAIXO: Feed com vários exemplos de pedidos existentes -->
+        <section>
+            <h2 class="section-title" style="margin-bottom: 1rem;">Mural de Pedidos Ativos</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">Confira os projetos publicados recentemente por clientes aguardando resposta de desenvolvedores.</p>
+
+            <div class="grid-produtos">
+                <!-- Exemplo de Pedido 1 -->
+                <div class="card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span class="badge status-aberto">Aguardando Dev</span>
+                        <span class="categoria">E-commerce</span>
+                        <h3 style="margin-top: 0.5rem;">E-commerce de Cosméticos</h3>
+                        <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem; min-height: 80px;">
+                            Preciso de uma loja virtual integrada ao Mercado Pago e com cálculo dinâmico de frete pelos Correios para venda de produtos de beleza naturais.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="preco" style="font-size: 1.1rem; margin: 0.5rem 0;">Orçamento: R$ 2.500,00</div>
+                        <button class="btn" style="width: 100%;" onclick="alert('Iniciando chat com o cliente do pedido...')">Responder Pedido</button>
+                    </div>
+                </div>
+
+                <!-- Exemplo de Pedido 2 -->
+                <div class="card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span class="badge status-aberto">Aguardando Dev</span>
+                        <span class="categoria">Landing Page</span>
+                        <h3 style="margin-top: 0.5rem;">Landing Page para Nutricionista</h3>
+                        <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem; min-height: 80px;">
+                            Página de conversão simples focada em agendamentos de consulta. Deve conter seção sobre a profissional, depoimentos e botão direto para WhatsApp.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="preco" style="font-size: 1.1rem; margin: 0.5rem 0;">Orçamento: R$ 600,00</div>
+                        <button class="btn" style="width: 100%;" onclick="alert('Iniciando chat com o cliente do pedido...')">Responder Pedido</button>
+                    </div>
+                </div>
+
+                <!-- Exemplo de Pedido 3 -->
+                <div class="card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span class="badge status-analise">Em Análise Técnica</span>
+                        <span class="categoria">Web App</span>
+                        <h3 style="margin-top: 0.5rem;">Sistema de Barbearia</h3>
+                        <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem; min-height: 80px;">
+                            Aplicativo web para agendamento de horários onde os clientes escolhem o serviço e o barbeiro de preferência. Painel administrativo simples necessário.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="preco" style="font-size: 1.1rem; margin: 0.5rem 0;">Orçamento: R$ 1.800,00</div>
+                        <button class="btn" style="width: 100%;" onclick="alert('Iniciando chat com o cliente do pedido...')">Responder Pedido</button>
+                    </div>
+                </div>
+
+                <!-- Exemplo de Pedido 4 -->
+                <div class="card" style="text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span class="badge status-aberto">Aguardando Dev</span>
+                        <span class="categoria">Institucional</span>
+                        <h3 style="margin-top: 0.5rem;">Site para Imobiliária Local</h3>
+                        <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 0.5rem; min-height: 80px;">
+                            Desenvolvimento de site institucional estruturado com sistema de exibição de fotos, filtros de busca por bairros e formulário de proposta.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="preco" style="font-size: 1.1rem; margin: 0.5rem 0;">Orçamento: R$ 3.200,00</div>
+                        <button class="btn" style="width: 100%;" onclick="alert('Iniciando chat com o cliente do pedido...')">Responder Pedido</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Loja. Todos os direitos reservados. | <a href="sobre.html" style="color: var(--accent); text-decoration: none;">Sobre a Empresa</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
